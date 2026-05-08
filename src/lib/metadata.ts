@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || 'Vendure Store';
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com';
-
+const rawUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com';
+export const SITE_URL = rawUrl.startsWith('http') ? rawUrl : `https://${rawUrl}`;
 /**
  * Truncate text to a maximum length, preserving word boundaries.
  * Strips HTML tags and is ideal for meta descriptions (recommended 150-160 chars).
