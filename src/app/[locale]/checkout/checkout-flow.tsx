@@ -94,9 +94,9 @@ export default function CheckoutFlow() {
       <div className="lg:col-span-2 lg:order-1">
         {/* Step Progress Indicator */}
         <div className="mb-8 hidden sm:block">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-row-reverse items-center justify-between">
             {stepOrder.map((step, index) => (
-              <div key={step} className="flex items-center flex-1 last:flex-0">
+              <div key={step} className="flex flex-row-reverse items-center flex-1 last:flex-0">
                 <div className="flex flex-col items-center gap-1.5">
                   <div
                     className={`flex items-center justify-center w-9 h-9 rounded-full text-sm font-semibold transition-all duration-300 ${
