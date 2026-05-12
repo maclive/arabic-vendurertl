@@ -153,6 +153,52 @@ html[dir="rtl"] [data-radix-popper-content-wrapper] {
   direction: rtl;
 }
 
+/* ── Global RTL text alignment ── */
+html[dir="rtl"] p,
+html[dir="rtl"] span,
+html[dir="rtl"] li,
+html[dir="rtl"] a,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] label,
+html[dir="rtl"] td,
+html[dir="rtl"] th {
+  text-align: right;
+}
+
+/* Footer columns */
+html[dir="rtl"] footer,
+html[dir="rtl"] footer * {
+  text-align: right;
+}
+
+/* FAQ / Accordion */
+html[dir="rtl"] [data-slot="accordion-trigger"],
+html[dir="rtl"] [data-slot="accordion-content"],
+html[dir="rtl"] [role="button"] {
+  text-align: right;
+}
+
+/* Keep centered elements centered (hero titles, section headings) */
+html[dir="rtl"] .text-center {
+  text-align: center !important;
+}
+
+/* Search input placeholder RTL */
+html[dir="rtl"] input::placeholder {
+  text-align: right;
+}
+
+/* Navbar links */
+html[dir="rtl"] nav a,
+html[dir="rtl"] nav span {
+  text-align: right;
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;

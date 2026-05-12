@@ -231,7 +231,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
               </Field>
             </div>
 
-            <div className="flex items-center space-x-2 mt-4">
+            <div className="flex items-center gap-2 mt-4">
               <Checkbox
                 id="same-billing-guest"
                 checked={useSameForBilling}
@@ -246,7 +246,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
             </div>
 
             <Button type="submit" disabled={loading} className="w-full mt-4">
-              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              {loading && <Loader2 className="me-2 h-4 w-4 animate-spin" />}
               {t('continue')}
             </Button>
           </FieldGroup>
@@ -262,7 +262,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
           <h3 className="font-semibold">{t('selectSavedAddress')}</h3>
           <RadioGroup value={selectedAddressId || ''} onValueChange={setSelectedAddressId}>
             {addresses.map((address) => (
-              <div key={address.id} className="flex items-start space-x-3">
+              <div key={address.id} className="flex items-start gap-3">
                 <RadioGroupItem value={address.id} id={address.id} className="mt-1" />
                 <Label htmlFor={address.id} className="flex-1 cursor-pointer">
                   <Card className="p-4">
@@ -285,7 +285,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
             ))}
           </RadioGroup>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2">
             <Checkbox
               id="same-billing"
               checked={useSameForBilling}
@@ -305,7 +305,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
               disabled={!selectedAddressId || loading}
               className="flex-1"
             >
-              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              {loading && <Loader2 className="me-2 h-4 w-4 animate-spin" />}
               {t('continueWithSelected')}
             </Button>
 
@@ -414,7 +414,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
                       {t('cancel')}
                     </Button>
                     <Button type="submit" disabled={saving}>
-                      {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                      {saving && <Loader2 className="me-2 h-4 w-4 animate-spin" />}
                       {t('saveAddress')}
                     </Button>
                   </DialogFooter>
@@ -528,7 +528,7 @@ export default function ShippingAddressStep({ onComplete }: ShippingAddressStepP
 
               <DialogFooter>
                 <Button type="submit" disabled={saving} className="w-full">
-                  {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                  {saving && <Loader2 className="me-2 h-4 w-4 animate-spin" />}
                   {t('saveAddress')}
                 </Button>
               </DialogFooter>

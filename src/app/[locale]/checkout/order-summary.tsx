@@ -17,6 +17,22 @@ function OrderSummaryContent({ order, t }: { order: ReturnType<typeof useCheckou
       <div className="space-y-3">
         {order.lines.map((line: OrderLine) => (
           <div key={line.id} className="flex gap-3">
+            <div className="text-sm font-medium self-start">
+              <Price value={line.linePriceWithTax} currencyCode={order.currencyCode} />
+            </div>
+            <div className="flex-1 min-w-0 text-right">
+              <p className="text-sm font-medium line-clamp-2">
+                {line.productVariant.product.name}
+              </p>
+              {line.productVariant.name !== line.productVariant.product.name && (
+                <p className="text-xs text-muted-foreground">
+                  {line.productVariant.name}
+                </p>
+              )}
+              <p className="text-xs text-muted-foreground">
+                {t('qty', {quantity: line.quantity})}
+              </p>
+            </div>
             {line.productVariant.product.featuredAsset ? (
               <div className="flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden bg-muted">
                 <Image
@@ -32,22 +48,6 @@ function OrderSummaryContent({ order, t }: { order: ReturnType<typeof useCheckou
                 <ShoppingBag className="h-5 w-5 text-muted-foreground" />
               </div>
             )}
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium line-clamp-2">
-                {line.productVariant.product.name}
-              </p>
-              {line.productVariant.name !== line.productVariant.product.name && (
-                <p className="text-xs text-muted-foreground">
-                  {line.productVariant.name}
-                </p>
-              )}
-              <p className="text-xs text-muted-foreground">
-                {t('qty', {quantity: line.quantity})}
-              </p>
-            </div>
-            <div className="text-sm font-medium">
-              <Price value={line.linePriceWithTax} currencyCode={order.currencyCode} />
-            </div>
           </div>
         ))}
       </div>
@@ -56,42 +56,42 @@ function OrderSummaryContent({ order, t }: { order: ReturnType<typeof useCheckou
 
       <div className="space-y-2">
         <div className="flex justify-between text-sm">
-          <span className="text-muted-foreground">{t('subtotal')}</span>
           <span>
             <Price value={order.subTotalWithTax} currencyCode={order.currencyCode} />
           </span>
+          <span className="text-muted-foreground">{t('subtotal')}</span>
         </div>
 
         {order.discounts && order.discounts.length > 0 && (
           <>
             {order.discounts.map((discount, index: number) => (
               <div key={index} className="flex justify-between text-sm text-green-600">
-                <span>{discount.description}</span>
                 <span>
                   <Price value={discount.amountWithTax} currencyCode={order.currencyCode} />
                 </span>
+                <span>{discount.description}</span>
               </div>
             ))}
           </>
         )}
 
         <div className="flex justify-between text-sm">
-          <span className="text-muted-foreground">{t('shipping')}</span>
           <span>
             {order.shippingWithTax > 0
               ? <Price value={order.shippingWithTax} currencyCode={order.currencyCode} />
               : t('toBeCalculated')}
           </span>
+          <span className="text-muted-foreground">{t('shipping')}</span>
         </div>
       </div>
 
       <Separator />
 
       <div className="flex justify-between font-bold text-lg">
-        <span>{t('total')}</span>
         <span>
           <Price value={order.totalWithTax} currencyCode={order.currencyCode} />
         </span>
+        <span>{t('total')}</span>
       </div>
     </div>
   );

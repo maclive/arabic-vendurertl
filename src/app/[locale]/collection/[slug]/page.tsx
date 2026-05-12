@@ -136,7 +136,7 @@ export default async function CollectionPage({params, searchParams}: PageProps<'
 
             {/* Collection Header */}
             <div className="mb-8">
-                <h1 className="text-3xl font-bold tracking-tight">{collectionName}</h1>
+                <h1 className="text-3xl font-bold tracking-tight text-right">{collectionName}</h1>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">

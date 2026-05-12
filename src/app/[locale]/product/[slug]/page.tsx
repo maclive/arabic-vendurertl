@@ -178,7 +178,7 @@ export default async function ProductDetailPage({params, searchParams}: PageProp
             {/* Store FAQ Section */}
             <section className="py-16 bg-muted/30">
                 <div className="container mx-auto px-4 max-w-2xl">
-                    <h2 className="text-2xl font-bold text-center mb-8">{t('faq.title')}</h2>
+                    <h2 className="text-2xl font-bold text-right mb-8">{t('faq.title')}</h2>
                     <Accordion className="w-full">
                         <AccordionItem value="shipping">
                             <AccordionTrigger>{t('faq.shipping.question')}</AccordionTrigger>

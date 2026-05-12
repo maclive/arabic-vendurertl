@@ -38,7 +38,7 @@ export async function Footer() {
                         <NavigationLink href="/" className="inline-block mb-4">
                             <span className="font-bold text-xl">برامج لايف</span>
                         </NavigationLink>
-                        <p className="text-sm text-muted-foreground text-balance leading-relaxed">
+                        <p className="text-sm text-muted-foreground leading-relaxed text-right">
                             {t('description')}
                         </p>
                     </div>

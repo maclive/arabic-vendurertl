@@ -90,8 +90,8 @@ export default function CheckoutFlow() {
   };
 
   return (
-    <div className="grid lg:grid-cols-3 gap-8">
-      <div className="lg:col-span-2">
+    <div className="grid lg:grid-cols-3 gap-8 direction-rtl">
+      <div className="lg:col-span-2 lg:order-1">
         {/* Step Progress Indicator */}
         <div className="mb-8 hidden sm:block">
           <div className="flex items-center justify-between">
@@ -283,7 +283,7 @@ export default function CheckoutFlow() {
         </Accordion>
       </div>
 
-      <div className="lg:col-span-1">
+      <div className="lg:col-span-1 lg:order-2">
         <OrderSummary />
       </div>
     </div>
